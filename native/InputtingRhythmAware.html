@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<title>Inputting Rhythm Aware test</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<script src="lang/Event.js"></script>
+<script src="lang/Function.js"></script>
+<script src="utils/equals.js"></script>
+<script src="lang/Array.js"></script>
+<script type="text/javascript" src="InputtingRhythmAware.js"></script>
+</head>
+<body>
+
+<input id="input1" type="text" style="width:100%;" />
+<div id="status">init</div>
+
+<script type="text/javascript">
+
+var ipt = document.getElementById("input1");
+var sta = document.getElementById("status");
+var searcher = new InputtingRhythmAware(ipt);
+UserDefinedEvent.addEventListener(ipt, "pause", function(){sta.innerHTML = "PAUSE";});
+UserDefinedEvent.addEventListener(ipt, "input", function(){sta.innerHTML = "Inputting...";});
+
+</script>
+</body>
+</html>
