@@ -6,7 +6,7 @@
  * @constructor new InputtingRhythmAware(HTMLElement);
  * @param {HTMLElement} inputElement 支持节奏感知的目标元素对象。
  * @since IE5.0, Firefox1.0, Opera8.0, Netscape8.0
- * 
+ *
  * @author 闲耘 (xianyun.org, mail@xianyun.org)
  * @version 0.8, 2007/11/23
  */
@@ -15,7 +15,7 @@ var InputtingRhythmAware = function(inputElement){
 	this.lastPauseValue = inputElement.value||""; // 输入框最后一次感知停顿时的文本值。
 	this.isBusy = false;
 	this.delay = 1000; // 1.0 sec. 停顿1.0秒时执行任务。
-	
+
 	this.handlers = {
 		keypress:Function.createDelegate(this, this.onKeypress),
 		keydown:Function.createDelegate(this, this.onKeydown),
@@ -25,7 +25,7 @@ var InputtingRhythmAware = function(inputElement){
 		change:Function.createDelegate(this, this.onChange),
 		pause:Function.createDelegate(this, this.onPause)
 	};
-	
+
 	//Event.addEventListener(this._element, "keypress", this.handlers.keypress);
 	Event.addEventListener(this._element, "keydown", this.handlers.keydown);
 	Event.addEventListener(this._element, "keyup", this.handlers.keyup);
@@ -60,9 +60,9 @@ InputtingRhythmAware.prototype.isChanged = function(){
  */
 InputtingRhythmAware.prototype.onKeydown = function(evt){
 	this.clearPause();
-	
+
 	var k = Event.keyCode(window.event||evt);
-	if ([Event.KEY_DOWN, Event.KEY_LEFT, 
+	if ([Event.KEY_DOWN, Event.KEY_LEFT,
 		Event.KEY_RIGHT, Event.KEY_UP].contains(k)){
 		return;
 	} else if (Event.KEY_RETURN===k) {
@@ -106,7 +106,8 @@ InputtingRhythmAware.prototype.onChange = function(){
  * 输入过程中断/暂停。
  */
 InputtingRhythmAware.prototype.onPause = function(){
-	if (this.__pause) this.__pause = null;
+    this.clearPause();
+	//if (this.__pause) this.__pause = null;
 	if (this._element.uonpause instanceof Function) this._element.uonpause();
 	this.lastPauseValue = this._element.value;
 };
