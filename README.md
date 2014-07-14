@@ -2,6 +2,10 @@
 
 ---
 
+[![spm version](http://spmjs.io/badge/rhythmaware)](http://spmjs.io/package/rhythmaware)
+[![Build Status](https://travis-ci.org/hotoo/rhythmaware.svg?branch=master)](https://travis-ci.org/hotoo/rhythmaware)
+
+
 输入节奏感知器。
 
 根据用户当前的输入速度快速调整，感知用户当前的输入停顿。
@@ -25,14 +29,23 @@ var rhy = new RhythmAware("input").on("pause", function(){
 
 ## API
 
-### RhythmAware(String select)
-### RhythmAware(HTMLElement input)
+### RhythmAware(String selector)
+
+### RhythmAware(HTMLElement element)
 
 构造函数。
 
 ### .on(String eventName, Function handler)
 
-支持事件包括：
+### .off(String eventName, Function handler)
 
-* `input`: 输入过程中触发这个事件。
-* `pause`: 输入停顿时触发这个事件。
+
+## EVENTS
+
+### input
+
+输入过程中触发这个事件。
+
+### pause
+
+输入停顿时触发这个事件。

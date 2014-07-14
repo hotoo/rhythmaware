@@ -4,15 +4,19 @@
 
 ````html
 <input type="text" />
-<div id="status">inited</div>
+<div id="status"></div>
 ````
 
 ````javascript
-seajs.use(['$', 'rhythmaware'], function($, rhythmaware){
+seajs.use(['jquery', 'rhythmaware'], function($, rhythmaware){
+  var status = $("#status")
+
   new rhythmaware("input").on("input", function(){
-    $("#status").text("inputting...");
+    status.text("inputting...");
   }).on("pause", function(){
-    $("#status").text("paused.");
+    status.text("paused.");
   });
+
+  status.text("inited")
 });
 ````
