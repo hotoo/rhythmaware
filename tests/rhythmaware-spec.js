@@ -1,12 +1,9 @@
-define(function(require) {
 
-  var rhythmaware = require('../src/rhythmaware');
+var rhythmaware = require('../rhythmaware');
 
-  describe('rhythmaware', function() {
+describe('rhythmaware', function() {
 
-    it('normal usage', function() {
+  it('normal usage', function() {
 
-    });
   });
-
 });
