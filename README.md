@@ -12,7 +12,7 @@
 
 ---
 
-## 使用说明
+## USAGE
 
 ```js
 var RhythmAware = require("rhythmaware");
@@ -31,21 +31,22 @@ var rhy = new RhythmAware("input").on("pause", function(){
 
 ### RhythmAware(String selector)
 
-### RhythmAware(HTMLElement element)
-
-构造函数。
+Constructor.
 
 ### .on(String eventName, Function handler)
 
+Add event listener.
+
 ### .off(String eventName, Function handler)
 
+Remove event listener.
 
 ## EVENTS
 
 ### input
 
-输入过程中触发这个事件。
+When use keyboard inputting, fire `input` event.
 
 ### pause
 
-输入停顿时触发这个事件。
+When paused input by keyboard, fire `pause` event.
