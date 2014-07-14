@@ -1,0 +1,27 @@
+{
+  "name": "rhythmaware",
+  "version": "0.2.0",
+  "description": "Input Rhythm Aware.",
+  "homepage": "https://github.com/hotoo/rhythmaware.js",
+  "author": "闲耘 <hotoo.cn@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hotoo/rhythmaware.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/hotoo/rhythmaware.js/issues"
+  },
+  "keywords": ["input", "smart"],
+  "licenses": "MIT",
+  "spm": {
+    "main": "rhythmaware.js",
+    "dependencies": {
+      "jquery": "1.7.2",
+      "arale-events": "1.2.0"
+    },
+    "devDependencies": {
+      "expect.js": "0.3.1"
+    },
+    "engines": {}
+  }
+}
